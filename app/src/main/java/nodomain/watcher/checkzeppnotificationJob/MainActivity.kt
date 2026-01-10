@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     private fun scheduleJob() {
         val componentName = ComponentName(this, NotificationAccessJobService::class.java)
         var period = 60 * 1_000L   // 60s
-        if (JobInfo.getMinPeriodMillis() > period) period = JobInfo.getMinPeriodMillis()    // I read that minimum is 15m
+        if (JobInfo.getMinPeriodMillis() > period) period = JobInfo.getMinPeriodMillis()    // I readed that minimum is 15m
         val jobInfo = JobInfo.Builder(123, componentName)
             .setPeriodic(period)
             .setPersisted(true)
